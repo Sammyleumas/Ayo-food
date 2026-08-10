@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  
+  --color-brand-bg: #1A1410;
+  --color-brand-surface: #2A1F18;
+  --color-brand-accent: #E8A33D;
+  --color-brand-text: #F5EDE4;
+  --color-brand-muted: #8A7A6A;
+  --color-brand-border: #3D2E24;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #1A1410;
+    color: #F5EDE4;
+  }
+  
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom golden accent shimmer & subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1A1410;
+}
+::-webkit-scrollbar-thumb {
+  background: #3D2E24;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8A33D;
+}
+
+/* Subtle image hover zoom constraint */
+.overflow-hidden-scale {
+  overflow: hidden;
+}
+.overflow-hidden-scale img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.overflow-hidden-scale:hover img {
+  transform: scale(1.05);
+}
+
